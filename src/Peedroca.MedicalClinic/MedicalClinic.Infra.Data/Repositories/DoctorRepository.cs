@@ -2,10 +2,8 @@
 using MedicalClinic.Domain.Interfaces;
 using MedicalClinic.Infra.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace MedicalClinic.Infra.Data.Repositories
 {

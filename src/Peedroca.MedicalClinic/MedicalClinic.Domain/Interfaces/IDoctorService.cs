@@ -13,13 +13,13 @@ namespace MedicalClinic.Domain.Interfaces
         /// Criar médico
         /// </summary>
         /// <param name="model">Modelo de criação de médico</param>
-        void Create(CreateDoctorModel model);
+        DoctorModel Create(CreateDoctorModel model);
 
         /// <summary>
         /// Atualizar médico
         /// </summary>
         /// <param name="model">Modelo de atualização de médico</param>
-        void Update(UpdateDoctorModel model);
+        DoctorModel Update(UpdateDoctorModel model);
 
         /// <summary>
         /// Listar médicos
