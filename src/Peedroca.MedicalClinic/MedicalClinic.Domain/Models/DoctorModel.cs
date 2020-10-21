@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MedicalClinic.Domain.Models
+﻿namespace MedicalClinic.Domain.Models
 {
     /// <summary>
     /// Modelo de Médico

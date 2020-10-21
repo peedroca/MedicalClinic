@@ -1,14 +1,13 @@
 ﻿using MedicalClinic.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MedicalClinic.Domain.Interfaces
 {
     /// <summary>
     /// Interface do repositório Médico
     /// </summary>
-    public interface IDoctorRepository : IDisposable
+    public interface IDoctorRepository
     {
         /// <summary>
         /// Salvar médico

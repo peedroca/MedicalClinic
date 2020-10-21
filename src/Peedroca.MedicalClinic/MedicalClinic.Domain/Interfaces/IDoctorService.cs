@@ -1,7 +1,6 @@
 ﻿using MedicalClinic.Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MedicalClinic.Domain.Interfaces
 {

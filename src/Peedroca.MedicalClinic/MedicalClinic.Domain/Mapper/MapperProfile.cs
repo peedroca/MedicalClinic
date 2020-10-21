@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
 using MedicalClinic.Domain.Entities;
 using MedicalClinic.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MedicalClinic.Domain.Mapper
 {

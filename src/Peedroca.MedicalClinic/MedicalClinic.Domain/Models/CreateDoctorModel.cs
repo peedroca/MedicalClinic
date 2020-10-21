@@ -1,8 +1,5 @@
 ﻿using Flunt.Notifications;
 using Flunt.Validations;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MedicalClinic.Domain.Models
 {
@@ -26,10 +23,10 @@ namespace MedicalClinic.Domain.Models
             Phone = phone;
 
             AddNotifications(new Contract()
-                .IsNotNullOrEmpty(Name, nameof(Name),"O nome não pode estar em branco.")
+                .IsNotNullOrEmpty(Name, nameof(Name), "O nome não pode estar em branco.")
                 .HasMinLen(Name, 1, nameof(Name), "O nome deve ter mais de 1 caractér")
                 .HasMaxLen(Name, 100, nameof(Name), "O nome não pode ter mais de 100 caracteres.")
-                .IsNotNullOrEmpty(Specialty, nameof(Specialty),"A especialidade não pode estar em branco.")
+                .IsNotNullOrEmpty(Specialty, nameof(Specialty), "A especialidade não pode estar em branco.")
                 .HasMinLen(Specialty, 5, nameof(Specialty), "A especialidade deve ter mais de 5 caracteres")
                 .HasMaxLen(Specialty, 70, nameof(Specialty), "A especialidade não pode ter mais de 70 caracteres.")
                 .IsNotNullOrEmpty(Phone, nameof(Phone), "O telefone não pode estar em branco.")

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MedicalClinic.Domain.Entities
+﻿namespace MedicalClinic.Domain.Entities
 {
     /// <summary>
     /// Entidade Paciênte

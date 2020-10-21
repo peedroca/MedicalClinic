@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E78AE493-287
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Domain", "MedicalClinic.Domain\MedicalClinic.Domain.csproj", "{9A4AF75B-7282-4064-AA30-61850CC14A67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Infra.Data", "MedicalClinic.Infra.Data\MedicalClinic.Infra.Data.csproj", "{8401021D-323F-4EDB-82EB-7A9ECC86FAC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{9A4AF75B-7282-4064-AA30-61850CC14A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A4AF75B-7282-4064-AA30-61850CC14A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A4AF75B-7282-4064-AA30-61850CC14A67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8401021D-323F-4EDB-82EB-7A9ECC86FAC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8401021D-323F-4EDB-82EB-7A9ECC86FAC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8401021D-323F-4EDB-82EB-7A9ECC86FAC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8401021D-323F-4EDB-82EB-7A9ECC86FAC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{2D71C826-8F75-4A41-8C2A-3A79EF580240} = {411F7BF6-3F16-4548-9588-8EFF2B5F002F}
 		{E78AE493-2877-49D7-B74A-6C48F6C2B4AB} = {411F7BF6-3F16-4548-9588-8EFF2B5F002F}
 		{9A4AF75B-7282-4064-AA30-61850CC14A67} = {2DFBAFCA-6F22-49F5-9DF2-DF6501B6C9F3}
+		{8401021D-323F-4EDB-82EB-7A9ECC86FAC5} = {602F4A8A-246C-4078-A3A8-A24BDCB04018}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74D524D1-75E9-497A-BFE4-55C668E3296C}
