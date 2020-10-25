@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Médicos da <i>Medical Clinic</i></h2>
+<br>
+
+<form asp-action="Search" method="post">
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <input name="Name" class="form-control"
+                       placeholder="Informe o nome do médico para refinar a busca..." />
+            </div>
+            <div class="col">
+                <button class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+        <text style="color:red;">@ViewData["Error"]</text>
+    </div>
+</form>
+
+<a asp-action="New">Cadastrar novo médico</a>
+<table class="table" border="1">
+
+    <thead>
+        <tr><th colspan="5">Médicos da Medical Clinic</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Nome</th>
+            <th>Especialidade</th>
+            <th>Telefone</th>
+            <th>&nbsp;</th>
+        </tr>
+        @{foreach (var item in ViewData["Doctors"] as IEnumerable<DoctorView>)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Specialty</td>
+                    <td>@item.Phone</td>
+                    <td>
+                        <a href="Edit/@item.Id">Editar</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

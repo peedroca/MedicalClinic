@@ -26,5 +26,12 @@ namespace MedicalClinic.Domain.Interfaces
         /// </summary>
         /// <returns>Lista de objetos do tipo <see cref="DoctorModel"/></returns>
         IEnumerable<DoctorModel> GetDoctors();
+
+        /// <summary>
+        /// Obter médico
+        /// </summary>
+        /// <param name="id">identificação</param>
+        /// <returns></returns>
+        DoctorModel GetDoctorById(long id);
     }
 }

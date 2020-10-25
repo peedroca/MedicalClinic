@@ -46,6 +46,19 @@ namespace MedicalClinic.Service
             _repository = null;
         }
 
+        public DoctorModel GetDoctorById(long id)
+        {
+            try
+            {
+                var doctor = _repository.GetDoctorById(id);
+                return _mapper.Map<DoctorModel>(doctor);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public IEnumerable<DoctorModel> GetDoctors()
         {
             try

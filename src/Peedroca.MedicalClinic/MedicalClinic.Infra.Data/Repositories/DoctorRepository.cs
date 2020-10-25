@@ -19,6 +19,14 @@ namespace MedicalClinic.Infra.Data.Repositories
             _context = context;
         }
 
+        public DoctorEntity GetDoctorById(long id)
+        {
+            return _context.Doctors
+                .AsNoTracking()
+                .Where(w => w.Id == id)
+                .SingleOrDefault();
+        }
+
         public IEnumerable<DoctorEntity> GetDoctors()
         {
             return _context.Doctors
