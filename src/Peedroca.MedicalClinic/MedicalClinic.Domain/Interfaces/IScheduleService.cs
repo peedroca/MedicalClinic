@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MedicalClinic.Domain.Interfaces
 {
-    interface IScheduleService : IDisposable
+    public interface IScheduleService : IDisposable
     {
         ScheduleModel Create(CreateScheduleModel model);
 
@@ -14,6 +14,6 @@ namespace MedicalClinic.Domain.Interfaces
 
         ScheduleModel GetScheduleById(long id);
 
-        void Delete(long id);
+        bool Delete(long id);
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MedicalClinic.Infra.Data.Repositories
 {
-    class CustomerRepository : ICustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private MedicalClinicDbContext _context;
 

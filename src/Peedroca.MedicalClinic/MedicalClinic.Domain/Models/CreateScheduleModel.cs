@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flunt.Notifications;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace MedicalClinic.Domain.Models
     /// <summary>
     /// Modelo de criação de agendamento
     /// </summary>
-    class CreateScheduleModel
+    public class CreateScheduleModel : Notifiable
     {
         /// <summary>
         /// Construtor

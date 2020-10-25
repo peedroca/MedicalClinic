@@ -7,7 +7,7 @@ namespace MedicalClinic.Domain.Models
     /// <summary>
     /// Modelo de agendamento
     /// </summary>
-    class ScheduleModel
+    public class ScheduleModel
     {
         /// <summary>
         /// Construtor

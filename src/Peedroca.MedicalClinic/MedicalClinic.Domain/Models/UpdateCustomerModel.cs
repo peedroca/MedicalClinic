@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flunt.Notifications;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace MedicalClinic.Domain.Models
     /// <summary>
     /// Modelo de atualização de paciênte
     /// </summary>
-    public class UpdateCustomerModel
+    public class UpdateCustomerModel : Notifiable
     {
         /// <summary>
         /// Contrutor

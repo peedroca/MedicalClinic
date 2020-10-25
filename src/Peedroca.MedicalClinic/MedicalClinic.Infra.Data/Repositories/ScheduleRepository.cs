@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MedicalClinic.Infra.Data.Repositories
 {
-    class ScheduleRepository : IScheduleRepository
+    public class ScheduleRepository : IScheduleRepository
     {
         private MedicalClinicDbContext _context;
 

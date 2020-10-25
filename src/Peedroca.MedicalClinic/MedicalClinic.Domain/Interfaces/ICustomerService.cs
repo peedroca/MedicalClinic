@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MedicalClinic.Domain.Interfaces
 {
-    interface ICustomerService : IDisposable
+    public interface ICustomerService : IDisposable
     {
         CustomerModel Create(CreateCustomerModel model);
 
