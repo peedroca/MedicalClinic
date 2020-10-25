@@ -3,7 +3,7 @@
     /// <summary>
     /// Entidade Paciênte
     /// </summary>
-    public class PatientEntity
+    public class CustomerEntity
     {
         /// <summary>
         /// Identificação

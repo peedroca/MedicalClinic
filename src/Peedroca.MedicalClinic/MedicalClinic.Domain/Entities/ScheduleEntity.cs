@@ -20,7 +20,7 @@ namespace MedicalClinic.Domain.Entities
         /// <summary>
         /// Paciênte
         /// </summary>
-        public PatientEntity Patient { get; set; }
+        public CustomerEntity Customer { get; set; }
 
         /// <summary>
         /// Médico

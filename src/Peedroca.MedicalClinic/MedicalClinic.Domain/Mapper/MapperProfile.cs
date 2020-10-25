@@ -14,6 +14,14 @@ namespace MedicalClinic.Domain.Mapper
             CreateMap<CreateDoctorModel, DoctorEntity>();
             CreateMap<UpdateDoctorModel, DoctorEntity>();
             CreateMap<DoctorEntity, DoctorModel>();
+
+            CreateMap<CreateCustomerModel, CustomerEntity>();
+            CreateMap<UpdateCustomerModel, CustomerEntity>();
+            CreateMap<CustomerEntity, CustomerModel>();
+
+            CreateMap<CreateScheduleModel, ScheduleEntity>();
+            CreateMap<UpdateScheduleModel, ScheduleEntity>();
+            CreateMap<ScheduleEntity, ScheduleModel>();
         }
     }
 }
