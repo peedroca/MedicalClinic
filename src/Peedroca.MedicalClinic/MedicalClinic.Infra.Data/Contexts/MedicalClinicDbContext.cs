@@ -18,7 +18,7 @@ namespace MedicalClinic.Infra.Data.Contexts
         /// <summary>
         /// Tabela Paciênte
         /// </summary>
-        public DbSet<CustomerEntity> Patients { get; set; }
+        public DbSet<CustomerEntity> Customers { get; set; }
 
         /// <summary>
         /// Tabela Agendamento
