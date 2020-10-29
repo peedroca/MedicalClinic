@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ 
+
+}
+
+<h3>Editar cadastro de Paciênte</h3>
+<hr />
+
+<form asp-action="Alter" method="post">    
+    <div class="form-group">
+        <pre>Identificação</pre>
+        <input class="form-control" id="disabledInput" value="@((ViewData["CustomerId"] as long?) ?? 0)" name="Id"
+               type="text" readonly />
+        <text style="color:red;">@ViewData["IdError"]</text>
+    </div>
+    <div class="form-group">
+        <pre>Nome</pre>
+        <input name="Name" value="@((ViewData["Customer"] as CustomerView).Name)"
+               class="form-control" placeholder="Informe o nome do paciênte..." />
+        <text style="color:red;">@ViewData["NameError"]</text>
+    </div>
+    <div class="form-group">
+        <pre>Telefone</pre>
+        <input name="Phone" value="@((ViewData["Customer"] as CustomerView).Phone)"
+               class="form-control" placeholder="Informe o telefone..." />
+        <text style="color:red;">@ViewData["PhoneError"]</text>
+    </div>
+    <button class="btn btn-primary">Salvar</button>
+</form>

@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Agendamentos da <i>Medical Clinic</i></h2>
+<br>
+
+<form asp-action="Search" method="post">
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <input name="NameDoctor" class="form-control"
+                       placeholder="Informe o nome do médico" />
+            </div>
+            <div class="col">
+                <input name="NameCustomer" class="form-control"
+                       placeholder="Informe o nome do paciênte" />
+            </div>
+            <div class="col">
+                <button class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+        <text style="color:red;">@ViewData["Error"]</text>
+    </div>
+</form>
+
+<a asp-action="New">Cadastrar novo agendamento</a>
+<table class="table" border="1">
+    <tbody>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Médico</th>
+            <th>Telefone</th>
+            <th>Paciente</th>
+            <th>Telefone</th>
+            <th>Data</th>
+            <th>&nbsp;</th>
+        </tr>
+        @{foreach (var item in ViewData["Schedules"] as IEnumerable<ScheduleView>)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.NameDoctor</td>
+                    <td>@item.PhoneDoctor</td>
+                    <td>@item.NameCustomer</td>
+                    <td>@item.PhoneCustomer</td>
+                    <td>@item.Date</td>
+                    <td>
+                        <a href="Schedule/Edit/@item.Id">Editar</a>
+                        |
+                        <a href="Schedule/Delete/@item.Id">Apagar</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

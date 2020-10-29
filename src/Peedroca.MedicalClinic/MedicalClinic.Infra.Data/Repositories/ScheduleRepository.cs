@@ -27,6 +27,8 @@ namespace MedicalClinic.Infra.Data.Repositories
             return _context.Schedules
                 .AsNoTracking()
                 .Where(w => w.Id == id)
+                .Include(i => i.Customer)
+                .Include(i => i.Doctor)
                 .SingleOrDefault();
         }
 
@@ -34,16 +36,14 @@ namespace MedicalClinic.Infra.Data.Repositories
         {
             return _context.Schedules
                 .AsNoTracking()
+                .Include(i => i.Customer)
+                .Include(i => i.Doctor)
                 .ToList();
         }
 
         public void SaveSchedule(ScheduleEntity entity)
         {
-            if (entity.Id == 0)
-                _context.Add(entity);
-            else
-                _context.Update(entity);
-
+            _context.Update(entity);
             _context.SaveChanges();
         }
     }

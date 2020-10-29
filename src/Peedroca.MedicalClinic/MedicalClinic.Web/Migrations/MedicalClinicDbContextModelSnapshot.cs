@@ -17,6 +17,23 @@ namespace MedicalClinic.Web.Migrations
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("MedicalClinic.Domain.Entities.CustomerEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("MedicalClinic.Domain.Entities.DoctorEntity", b =>
                 {
                     b.Property<long>("Id")
@@ -37,27 +54,13 @@ namespace MedicalClinic.Web.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("MedicalClinic.Domain.Entities.PatientEntity", b =>
+            modelBuilder.Entity("MedicalClinic.Domain.Entities.ScheduleEntity", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Patients");
-                });
-
-            modelBuilder.Entity("MedicalClinic.Domain.Entities.ScheduleEntity", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long?>("CustomerId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("Date")
@@ -66,27 +69,24 @@ namespace MedicalClinic.Web.Migrations
                     b.Property<long?>("DoctorId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("PatientId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorId");
+                    b.HasIndex("CustomerId");
 
-                    b.HasIndex("PatientId");
+                    b.HasIndex("DoctorId");
 
                     b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("MedicalClinic.Domain.Entities.ScheduleEntity", b =>
                 {
+                    b.HasOne("MedicalClinic.Domain.Entities.CustomerEntity", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
                     b.HasOne("MedicalClinic.Domain.Entities.DoctorEntity", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
-
-                    b.HasOne("MedicalClinic.Domain.Entities.PatientEntity", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId");
                 });
 #pragma warning restore 612, 618
         }

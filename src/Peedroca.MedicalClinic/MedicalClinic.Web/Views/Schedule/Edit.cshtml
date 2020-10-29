@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ 
+
+}
+
+<h3>Editar cadastro de agendamento</h3>
+<hr />
+
+<form asp-action="Alter" method="post">
+    <div class="form-group">
+        <pre>Identificação</pre>
+        <input class="form-control" id="disabledInput" value="@((ViewData["ScheduleId"] as long?) ?? 0)" name="Id"
+               type="text" readonly />
+        <text style="color:red;">@ViewData["IdError"]</text>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Paciêntes</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" name="CustomerId">
+            <option value="@(((ScheduleView)ViewData["Schedule"]).IdCustomer)" selected>@(((ScheduleView)ViewData["Schedule"]).NameCustomer)</option>
+            @{foreach (var item in ViewData["Customers"] as IEnumerable<CustomerView>)
+                {
+                    <option value="@(item.Id)">@(item.Name)</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Médicos</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" name="DoctorId">
+            <option value="@(((ScheduleView)ViewData["Schedule"]).IdDoctor)" selected>@(((ScheduleView)ViewData["Schedule"]).NameDoctor)</option>
+            @{foreach (var item in ViewData["Doctors"] as IEnumerable<DoctorView>)
+                {
+                    <option value="@(item.Id)">@(item.Name)</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <pre>Data do Atendimento</pre>
+        <input name="Date" value="@(((ScheduleView)ViewData["Schedule"]).Date)"
+               placeholder="Informe a data...">
+        <text style="color:red;">@ViewData["PhoneError"]</text>
+    </div>
+    <button class="btn btn-primary">Salvar</button>
+</form>

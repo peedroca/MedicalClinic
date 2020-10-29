@@ -13,11 +13,11 @@ namespace MedicalClinic.Domain.Mapper
         {
             CreateMap<CreateDoctorModel, DoctorEntity>();
             CreateMap<UpdateDoctorModel, DoctorEntity>();
-            CreateMap<DoctorEntity, DoctorModel>();
+            CreateMap<DoctorEntity, DoctorModel>().ReverseMap();
 
             CreateMap<CreateCustomerModel, CustomerEntity>();
             CreateMap<UpdateCustomerModel, CustomerEntity>();
-            CreateMap<CustomerEntity, CustomerModel>();
+            CreateMap<CustomerEntity, CustomerModel>().ReverseMap();
 
             CreateMap<CreateScheduleModel, ScheduleEntity>();
             CreateMap<UpdateScheduleModel, ScheduleEntity>();

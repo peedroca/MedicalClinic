@@ -51,7 +51,7 @@ namespace MedicalClinic.Web.Controllers
             return View("Index");
         }
 
-        [HttpGet("Edit/{id}")]
+        [HttpGet("Doctor/Edit/{id}")]
         public IActionResult Edit([FromRoute] long id)
         {
             var doctor = _mapper.Map<DoctorView>(_doctorService.GetDoctorById(id));

@@ -33,6 +33,9 @@ namespace MedicalClinic.Web
                 , b => b.MigrationsAssembly("MedicalClinic.Web")));
 
             services.AddScoped<IDoctorService, DoctorService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IScheduleService, ScheduleService>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 

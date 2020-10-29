@@ -4,7 +4,7 @@
 @{
 }
 
-<h2>Médicos da <i>Medical Clinic</i></h2>
+<h2>Paciêntes da <i>Medical Clinic</i></h2>
 <br>
 
 <form asp-action="Search" method="post">
@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col">
                 <input name="Name" class="form-control"
-                       placeholder="Informe o nome do médico para refinar a busca..." />
+                       placeholder="Informe o nome do paciênte para refinar a busca..." />
             </div>
             <div class="col">
                 <button class="btn btn-primary">Buscar</button>
@@ -22,25 +22,23 @@
     </div>
 </form>
 
-<a asp-action="New">Cadastrar novo médico</a>
+<a asp-action="New">Cadastrar novo paciênte</a>
 <table class="table" border="1">
     <tbody>
         <tr>
             <th>&nbsp;</th>
             <th>Nome</th>
-            <th>Especialidade</th>
             <th>Telefone</th>
             <th>&nbsp;</th>
         </tr>
-        @{foreach (var item in ViewData["Doctors"] as IEnumerable<DoctorView>)
+        @{foreach (var item in ViewData["Customers"] as IEnumerable<CustomerView>)
             {
                 <tr>
                     <td>@item.Id</td>
                     <td>@item.Name</td>
-                    <td>@item.Specialty</td>
                     <td>@item.Phone</td>
                     <td>
-                        <a href="Doctor/Edit/@item.Id">Editar</a>
+                        <a href="Customer/Edit/@item.Id">Editar</a>
                     </td>
                 </tr>
             }

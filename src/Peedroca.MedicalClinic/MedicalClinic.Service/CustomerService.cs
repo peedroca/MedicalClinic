@@ -13,7 +13,7 @@ namespace MedicalClinic.Service
     /// <summary>
     /// Serviço Paciênte
     /// </summary>
-    class CustomerService : ICustomerService
+    public class CustomerService : ICustomerService
     {
         private ICustomerRepository _repository;
         private IMapper _mapper;
