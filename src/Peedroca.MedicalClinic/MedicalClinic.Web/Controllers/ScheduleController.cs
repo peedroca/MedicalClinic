@@ -45,11 +45,16 @@ namespace MedicalClinic.Web.Controllers
 
         public IActionResult Search(string nameDoctor, string nameCustomer)
         {
-            var schedules = _scheduleService.GetSchedules()?.Where(w => (w?.Doctor?.Name?.ToLower()?.Contains(nameDoctor?.ToLower()) ?? false)
-                || (w?.Customer?.Name?.ToLower()?.Contains(nameCustomer?.ToLower()) ?? false));
+            var schedules = _scheduleService.GetSchedules();
 
             if (schedules != null && schedules.Count() > 0)
             {
+                if (!string.IsNullOrEmpty(nameDoctor))
+                    schedules = schedules.Where(w => w.Doctor?.Name?.ToLower()?.Contains(nameDoctor?.ToLower()) ?? false)?.ToList();
+
+                if (!string.IsNullOrEmpty(nameCustomer))
+                    schedules = schedules.Where(w => w.Customer?.Name?.ToLower()?.Contains(nameCustomer?.ToLower()) ?? false)?.ToList();
+
                 var schedulesView = _mapper.Map<IEnumerable<ScheduleView>>(schedules);
                 ViewData["Schedules"] = schedulesView;
             }
