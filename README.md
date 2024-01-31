@@ -6,7 +6,6 @@
 ![Versão](https://img.shields.io/github/v/release/peedroca/MedicalClinic?style=for-the-badge)
 
 ## O que é o sistema MecialClinic?
-
 Sistema WEB de agendamento de consultas para uma clínica médica. Com o intuito de simplificar o cadastro de pacientes e médicos, assim como seus números de contato. Possibilitando a organização das consultas, facilitando o gerenciamento de toda a clínica.
 
 ## Tecnologias implementadas:
